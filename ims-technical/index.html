@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CASA Technical Deep-Dive</title>
+
+		<meta name="description" content="">
+		<meta name="author" content="Eric R. Bollens">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.min.css">
+		<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="../_asset/style.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                
+				<section>
+					<h1>CASA</h1>
+					<h3>Technical Deep-Dive</h3>
+					<p>
+                        <small><a href="http://eb.io" target="_blank">Eric Bollens</a> / <a href="https://github.com/ebollens" target="_blank">ebollens [GitHub]</a> / <a href="http://twitter.com/ericbollens" target="_blank">@ericbollens [Twitter]</a></small>
+					</p>
+				</section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>Expectations</h2>
+                        <p class='fragment'>From learning tool to mobile app...
+                            <br><strong class="fragment">demand for more and more apps</strong></p>
+                        <p>
+                            <em class='fragment'>Plentiful</em>
+                            <br>
+                            <em class='fragment'>Relevant</em>
+                            <br>
+                            <em class='fragment'>Robust</em>
+                        </p>
+                        <p class='fragment'>
+                            How do we enable an ecosystem of apps?</strong>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Search Is Not Sufficient</h2>
+                        <p class="fragment">The Word Wide Web is vast and uncurated</p>
+                        <p class="fragment">Limited ability to identify capabilities and relevancy</p>
+                        <p>
+                            <em class="fragment">Device support</em>
+                            <br>
+                            <em class="fragment">Interoperability</em>
+                            <br>
+                            <em class="fragment">World view</em>
+                        </p>
+                        <p class="fragment">A model that already does this well...</p>
+                        <p class="fragment"><strong>Native App Stores</strong></p>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h3>An App Store</h3>
+                        <h2>Within the Institution</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>Constituents</h2>
+                        <p class="fragment">Each institutions has...</p>
+                        <p class="fragment">
+                            <strong>Engine</strong>
+                            <br><em>Curated app ecosystem<br>for the institution</em>
+                        </p>
+                        <p class="fragment">
+                            <strong>Outlets</strong>
+                            <br><em>Learning platform, mobile dashboard,<br>student portal, etc.</em>
+                        </p>
+                        <p class="fragment">
+                            <strong>Protocol</strong>
+                            <br><em>RESTful web services</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Integration</h2>
+                        <p class="fragment">Write your own outlet with the engine's web services, <span class='fragment'>or...<br></span><span class="fragment">use reference implementation's adapter-based architecture</span></p>
+                        <p>
+                            <em class="fragment">LTI ContentItemSelectionRequest</em>
+                            <br>
+                            <em class="fragment">W3C Web Storage localstorage</em>
+                            <br>
+                            <em class="fragment">etc.</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Demo</h2>
+                        <p><em>Reference implementation storefront</em></p>
+                        <p><em>Adding apps with the LTI ContentItemSelectionRequest</em></p>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h3>An App Community</h3>
+                        <h2>Beyond the Institution</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>Growing the Ecosystem</h2>
+                        <p class='fragment'>How do we discover new content/tools/apps?</p>
+                        <p>
+                            <em class="fragment">Peer</em>
+                            <br>
+                            <em class="fragment">Discover</em>
+                            <br>
+                            <em class="fragment">Share</em>
+                            <br>
+                            <em class="fragment">Propagate</em>
+                        </p>
+                        <p class="fragment">CASA automates this process</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Modeling the Real World</h2>
+                        <p class="fragment">Institutions are autonomous systems</p>
+                        <p>
+                            <em class='fragment'>Heterogeneous world views and trust relationships</em>
+                            <br>
+                            <em class='fragment'>Central aggregator isn't ideal</em>
+                        </p>
+                        <p class="fragment">Peer-to-peer network</p>
+                        <p>
+                            <em class="fragment">Small world networks</em>
+                            <br>
+                            <em class="fragment">Tightly coupled subgraphs with articulating supernodes</em>
+                        </p>
+                        <p class="fragment">Not a new problem</p>
+                        <p>
+                            <em class="fragment">Routing protocols</em>
+                            <br>
+                            <em class="fragment">Just a different layer</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <div style='height:600px'>
+                            <img src="peer-diagram.png">
+                        </div>
+                    </section>
+                    
+                    <section>
+                        <h2>Demo</h2>
+                        <p><em>Discovering apps from peers</em></p>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>Protocol Mechanics</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>Disclaimers</h2>
+                        <p class='fragment'>The concepts, terminology and details of the CASA protocol and reference implementation discussed herein are in draft form and may change before final release.</p>
+                        <p class='fragment'>The online version of the CASA protocol is currently out-of-date in relation to the reference implementation.</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Terminology</h2>
+                        <p class="fragment">Autonomous System</p>
+                        <p class="fragment">App</p>
+                        <p class="fragment">Payload</p>
+                        <p class="fragment">Protocol Module</p>
+                        <p class="fragment">Attribute Specification</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Inter-AS Protocol Modules</h2>
+                        <p class="fragment">Payload</p>
+                        <p class="fragment">Publisher</p>
+                        <p class="fragment">Receiver</p>
+                        <p class="fragment">Relay</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Intra-AS Protocol Modules</h2>
+                        <p class="fragment">Payload</p>
+                        <p class="fragment">Local</p>
+                        <p class="fragment">Manager</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Payload Module</h2>
+                        <p class='fragment'>Identity</p>
+                        <p class='fragment'>URI</p>
+                        <p class='fragment'>Timestamp</p>
+                        <p class='fragment'>Share &amp; Propagate Flags</p>
+                        <p class='fragment'>Required &amp; Optional Attributes</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Payload Representations</h2>
+                        <p class="fragment">Two representations of an app</p>
+                        <p class="fragment">
+                            <strong>TransitPayload</strong>
+                            <br><em class="fragment">Machine-readable UUID attribute names</em>
+                            <br><em class="fragment">Original and journalled attributes</em>
+                        </p>
+                        <p class="fragment">
+                            <strong>LocalPayload</strong>
+                            <br><em class="fragment">Local human-readable attribute names</em>
+                            <br><em class="fragment">Squashed attributes</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Payload Attributes</h2>
+                        <p class="fragment">Attribute specification by UUID</p>
+                        <p class="fragment">Defines payload operation mechanics:</p>
+                        <p>
+                            <em class="fragment">Filter</em>
+                            <br>
+                            <em class="fragment">Transform</em>
+                            <br>
+                            <em class="fragment">Journal</em>
+                        </p>
+                        <p class="fragment">Can be marked optional or required</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Publisher Module</h2>
+                        <p class="fragment">Respond to<br><code>GET /payloads</code></p>
+                        <p class='fragment'>For each payload to be shared:</p>
+                        <p>
+                            <em class="fragment">AdjOutTranslate<br><small>(MUST, if LocalPayload representation)</small></em>
+                        </p>
+                        <p class='fragment'>As simple as publishing a JSON file</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Receiver Module</h2>
+                        <p class="fragment">Data path for requests to<br><code>GET /payloads</code></p>
+                        <p class="fragment">For each payload received and validated:</p>
+                        <p>
+                            <em class="fragment">AdjInTranslate<br><small>(MUST)</small></em>
+                            <br>
+                            <em class="fragment">AdjInSquash<br><small>(MUST)</small></em>
+                            <br>
+                            <em class="fragment">AdjInFilter<br><small>(MUST base, MAY extend)</small></em>
+                            <br>
+                            <em class="fragment">AdjInStore<br><small>(MAY)</small></em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Relay Module</h2>
+                        <p class="fragment">Data path for payloads<br>from receiver to publisher</p>
+                        <p class="fragment">For each payload through Receiver Module:</p>
+                        <p>
+                            <em class="fragment">AdjOutTransform<br><small>(MUST base, MAY extend)</small></em>
+                            <br>
+                            <em class="fragment">AdjOutStore<br><small>(MAY)</small></em>
+                            <br>
+                            <em class="fragment">AdjOutFilter<br><small>(MUST base, MAY extend)</small></em>
+                        </p>
+                        <p class="fragment">Deliver non-originating payloads to Publisher Module</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Local Module</h2>
+                        <p class="fragment">Respond to outlets with payloads</p>
+                        <p>
+                            <em class="fragment"><code>GET /local/payloads</code><br><small>(MUST)</small></em>
+                            <br>
+                            <em class="fragment"><code>GET /local/payloads/:org_id/:app_id</code><br><small>(MUST)</small></em>
+                            <br>
+                            <em class="fragment"><code>GET /local/payloads?search=TXT</code><br><small>(SHOULD)</small></em>
+                            <br>
+                            <em class="fragment"><code>GET /local/payloads/_:method?body=QRY</code><br><small>(SHOULD)</small></em>
+                        </p>
+                        <p class='fragment'>Also how to send originating payloads to Publisher Module</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Manager Module</h2>
+                        <p class="fragment">Interact with management outlets</p>
+                        <p>
+                            <em class="fragment"><code>/admin/local/payloads/..</code></em>
+                            <br>
+                            <em class="fragment"><code>/admin/attributes/..</code></em>
+                            <br>
+                            <em class="fragment"><code>/admin/peers/in/..</code></em>
+                            <br>
+                            <em class="fragment"><code>/admin/peers/out/..</code></em>
+                            <br>
+                            <em class="fragment"><code>/admin/settings</code></em>
+                        </p>
+                        <p class='fragment'>May or may not end up in the final protocol</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Demo</h2>
+                        <p><em>Protocol document</em></p>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>Reference Implementation</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>Configurability</h2>
+                        <p class="fragment">Adapter-driven persistence &amp; indexing</p>
+                        <p class="fragment">At launch, reference implementation supports:</p>
+                        <p>
+                            <em class="fragment">Persistence - MySQL, MsSQL, Sqlite</em>
+                            <br>
+                            <em class="fragment">Indexer - ElasticSearch</em>
+                        </p>
+                        <p class="fragment">This is intra-AS knowledge</p>
+                        <p>
+                            <em class="fragment"><code>GET /local/payloads?search=TXT</code> &nbsp;(SHOULD)</em>
+                            <br>
+                            <em class="fragment"><code>GET /local/payloads/_:type?body=QRY</code> &nbsp;(SHOULD)</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Scalability</h2>
+                        <p class='fragment'><strong>ElasticSearch</strong> supported for &nbsp;<code>GET /local/payloads</code><br><span class='fragment'>and soon for &nbsp;<code>GET /payloads</code></span></p>
+                        <p>
+                            <em class='fragment'>Highly recommended for horizontal scaling</em>
+                            <br>
+                            <em class='fragment'>Caveat is eventual consistency</em>
+                        </p>
+                        <p class='fragment'>Trivial to add different index or persistence</p>
+                        <p>
+                            <em class='fragment'>Just define an adapter</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Modularity</h2>
+                        <p class="fragment">Can enable or disable:</p>
+                        <p>
+                            <em class="fragment">Publisher</em>
+                            <br>
+                            <em class="fragment">Receiver</em>
+                            <br>
+                            <em class="fragment">Relay*</em>
+                            <br>
+                            <em class="fragment">Local</em>
+                        </p>
+                        <p class="fragment">Implemented as a set of Ruby gems &amp; JS libraries</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Demo</h2>
+                        <p><em>Engine internal adapters</em></p>
+                        <p><em>Core and attribute settings</em></p>
+                    </section>
+                    
+                    <section>
+                        <h2>Platform Implementation</h2>
+                        <p class="fragment">Implement the CASA protocol from scratch</p>
+                        <p class="fragment">Leverage gems to implement an engine</p>
+                        <p class="fragment">Engine reference implementation with custom outlets</p>
+                        <p class="fragment">Reference implementation's outlet integration points</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Outlet Integration</h2>
+                        <p class='fragment'><strong>Today...</strong> LTI ContentItemSelectionRequest</p>
+                        <p class='fragment'><strong>Soon...</strong> W3C Web Storage localStorage</p>
+                        <div class='fragment'>
+                            <p><em>Define launch point, save state and push to JS app:</em></p>
+                            <pre class='prettyprint'><code>window.location = '/index.html?type=lti&amp;lti='
+      + encodeURIComponent(JSON.stringify({
+          'return': '/lti/consumer'
+        }));</code></pre>
+                        </div>
+                        <div class='fragment'>
+                            <p><em>Receive post from JS app and exit through integrated endpoint:</em></p>
+                            <pre class='prettyprint'><code>post '/lti/consumer' do
+  app = JSON.parse params[:app]
+  # ..
+  return erb :return_to_consumer
+end</code></pre>
+                        </div>
+                    </section>
+                    
+                    <section>
+                        <h2>Attribute Extensibility</h2>
+                        <p class='fragment'>Define UUID, section and behaviors</p>
+                        <pre class='prettyprint fragment'><code>module CASA
+  module Attribute
+    class Title < Definition
+      uuid '1f2625c2-615f-11e3-bf13-d231feb1dc81'
+      section 'use'
+      squash Strategy::Squash::String
+      filter Strategy::Filter::String
+      transform Strategy::Transform::String
+    end
+  end
+end</code></pre>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>Where are we today?</h2>
+                        <p class='fragment'>Reference implementation nearing beta</p>
+                        <p class='fragment'>Protocol draft needs to be updated/finished</p>
+                        <p class='fragment'>Development of attribute specifications</p>
+                    </section>
+                    
+                    <section>
+                        <h2>Getting Involved</h2>
+                        <p class='fragment'><strong>Open source on GitHub</strong><br><em>http://github.com/AppSharing</em></p>
+                        <p class='fragment'><strong>IMS Developers Bootcamp</strong><br><em>August 20-21, 2014 at University of Michigan, Ann Arbor</em><br><small>http://www.imsglobal.org/bootcamp2014.html</small></p>
+                        <p class='fragment'><strong>Mobility and Modern Web Conference</strong><br><em>Septenber 17-19, 2014 at University of California, Los Angeles</em><br><small>http://mmwcon.org</small></p>
+                        <p class='fragment'><strong>Future updates</strong><br>http://developers.imsglobal.org/dev</p>
+                    </section>
+                    
+                </section>
+
+				<section>
+					<h2>Thank You</h2>
+                    <h3>Any Questions?</h3>
+                    <p>
+                        <small><a href="http://eb.io" target="_blank">Eric Bollens</a> / <a href="https://github.com/ebollens" target="_blank">ebollens [GitHub]</a> / <a href="http://twitter.com/ericbollens" target="_blank">@ericbollens [Twitter]</a></small>
+                    </p>
+				</section>
+
+			</div>
+            
+            <footer style='position:fixed; bottom:0; right:0; left:0; text-align:center; margin-bottom: 24px; font-size: 18px; font-weight:bold; font-style: italic; z-index:1000;'>
+                <a href='http://ebollens.github.io/casa-presentations/ims-technical'>ebollens.github.io/casa-presentations/ims-technical</a>
+            </footer>
+
+		</div>
+
+		<script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+		<script src="http://lab.hakim.se/reveal-js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'http://lab.hakim.se/reveal-js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://lab.hakim.se/reveal-js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://lab.hakim.se/reveal-js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
