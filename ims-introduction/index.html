@@ -39,146 +39,79 @@
 			<div class="slides">
                 
 				<section>
+					<h3>Introduction to</h3>
 					<h1>CASA</h1>
-					<h3>Community App Sharing Architecture</h3>
+                    <h4>Part II</h4>
 					<p>
                         <small><a href="http://eb.io" target="_blank">Eric Bollens</a> / <a href="https://github.com/ebollens" target="_blank">ebollens [GitHub]</a> / <a href="http://twitter.com/ericbollens" target="_blank">@ericbollens [Twitter]</a></small>
+                        <br>
+                        <small>Rose Rocchio / <a href="https://github.com/rrocchio" target="_blank">rrocchio [GitHub]</a> / <a href="http://twitter.com/RoseRocchio" target="_blank">@RoseRocchio [Twitter]</a></small>
 					</p>
 				</section>
                 
                 <section>
                     
                     <section>
-                        <h2>Expectations</h2>
-                        <p class='fragment'>From learning tool to mobile app...
-                            <br><strong class="fragment">demand for more and more apps</strong></p>
+                        <h2>An Institutional App Store</h2>
+                        <p class="fragment">This is an <strong>outlet</strong></p>
                         <p>
-                            <em class='fragment'>Plentiful</em>
+                            <em class="fragment">making calls to the <strong>engine</strong></em>
                             <br>
-                            <em class='fragment'>Relevant</em>
-                            <br>
-                            <em class='fragment'>Robust</em>
+                            <em class="fragment">via web services defined by the <strong>protocol</strong></em>
                         </p>
-                        <p class='fragment'>
-                            We've got frameworks make it easy to get going
-                            <br><strong class="fragment">but how do we enable an ecosystem?</strong>
+                        <p class="fragment">This outlet is built to <strong>integrate</strong></p>
+                        <p>
+                            <em class="fragment">thin LTI wrapper around generic JS app</em>
+                            <br>
+                            <em class="fragment">sending back LTI ContentItem message</em>
                         </p>
                     </section>
                     
                     <section>
-                        <h2>Search Is Not Sufficient</h2>
-                        <p class="fragment">The Word Wide Web is vast and uncurated</p>
-                        <p class="fragment">Limited ability to identify capabilities and relevancy</p>
+                        <h2>An Ecosystem of Apps</h2>
+                        <p class="fragment"><strong>Modeling our decision-making process</strong></p>
                         <p>
-                            <em class="fragment">Device support</em>
+                            <em class="fragment">Filtering apps for relevance</em>
                             <br>
-                            <em class="fragment">Interoperability</em>
+                            <em class="fragment">Transforming attributes for our world view</em>
                             <br>
-                            <em class="fragment">World view</em>
+                            <em class="fragment">Journaling any changes made</em>
                         </p>
-                        <p class="fragment">A model that already does this well...</p>
-                        <p class="fragment"><strong>Native App Stores</strong></p>
-                    </section>
-                    
-                    <section>
-                        <h2>Web App Stores</h2>
-                        <p class="fragment">Mobile Web Framework</p>
+                        <p class="fragment"><strong>Modeling the real world</strong></p>
                         <p>
-                            <em class="fragment">Each organization contacts peers for apps</em>
+                            <em class="fragment">Local decisions to curate our ecosystem</em>
                             <br>
-                            <span class="fragment"><code>1/2*N*(N-1)</code><em> connections for complete</em></span>
-                        </p>
-                        <p class="fragment"><a href='http://developers.imsglobal.org/catalog.html'>IMS LTI Catalog</a></p>
-                        <p>
-                            <em class="fragment">Aggregator as central repository for apps</em>
-                            <br>
-                            <em class="fragment">Homogeneous world view and trust</em>
+                            <em class="fragment">while being part of a larger community</em>
                         </p>
                     </section>
                     
                     <section>
-                        <h2>Modeling the Real World</h2>
-                        <p class="fragment">Peer with others</p>
-                        <p class="fragment">Discover apps</p>
-                        <p class="fragment">Share apps</p>
-                        <p class="fragment">Propagate apps</p>
-                    </section>
-                    
-                    <section>
-                        <h2>Don't Start from Scratch</h2>
-                        <p class='fragment'>Routing protocols</p>
-                        <p>
-                            <em class='fragment'>Each peer is an autonomous system</em>
+                        <h2>Flexibility</h2>
+                        <p class="fragment">
+                            <strong>Protocol modules</strong>
                             <br>
-                            <em class='fragment'>Just a different layer</em>
+                            <em>from static JSON to full peer</em>
                         </p>
-                        <p class='fragment'>Small world networks</p>
-                        <p>
-                            <em class='fragment'>Distributed topology</em>
+                        <p class="fragment">
+                            <strong>Attribute specifications</strong>
                             <br>
-                            <em class='fragment'>Tightly coupled subgraphs</em>
+                            <em>how to define attributes rather than defining them</em>
+                        </p>
+                        <p class="fragment">
+                            <strong>Reference implementation</strong>
+                            <br>
+                            <em>modular and configurable</em>
                         </p>
                     </section>
                     
-                </section>
-                
-                <section>
                     <section>
-                        <h2>Defining the Network</h2>
-                        <p class='fragment'>Each autonomous system runs an &quot;engine&quot;</p>
-                        <p>
-                            <em class='fragment'>Query apps from inbound peers</em>
-                            <br>
-                            <em class='fragment'>Share apps with outbound peers</em>
-                            <br>
-                            <em class='fragment'>Translate, filter and transform</em>
-                            <br>
-                            <em class='fragment'>Provide interfaces for local outlets</em>
-                        </p>
-                        <p class='fragment'>Outlets present apps</p>
-                        <p>
-                            <em class='fragment'>Mobile app portal/storefront</em>
-                            <br>
-                            <em class='fragment'>Learning management system tool library</em>
-                        </p>
+                        <h2>Implementation</h2>
+                        <p class="fragment">Implement the protocol in part or full</p>
+                        <p class="fragment">Use libraries to build your own engine</p>
+                        <p class="fragment">Use the engine and hook up your own outlets</p>
+                        <p class="fragment">Use the outlet with its integration points</p>
                     </section>
-                    <section>
-                        <h2>Representing an App</h2>
-                        <p class='fragment'>Identity</p>
-                        <p class='fragment'>URI</p>
-                        <p class='fragment'>Timestamp</p>
-                        <p class='fragment'>Share &amp; Propagate Flags</p>
-                        <p class='fragment'>Required &amp; Optional Attributes</p>
-                    </section>
-                    <section>
-                        <h2>Attributes</h2>
-                        <p class='fragment'>UUID-based</p>
-                        <p class='fragment'>Extensible</p>
-                        <p class='fragment'>Journalled</p>
-                        <p class='fragment'>World view</p>
-                    </section>
-                    <section>
-                        <div style='height:600px'>
-                            <img src="peer-diagram.png">
-                        </div>
-                    </section>
-                </section>
-                
-                <section>
-                    <h2>Where are we today?</h2>
-                    <p>
-                        <em class='fragment'>CASA reference implementation in alpha testing</em>
-                        <br><em class='fragment'>Work-in-progress draft of CASA protocol</em>
-                        
-                    </p>
-                    <p class='fragment'>Currently a collaboration between
-                    <p>
-                        <em class="fragment">UCLA</em>
-                        <br><em class="fragment">IMS Global Learning Consortium</em>
-                        <br><em class="fragment">Higher Ed &amp; EdTech Partners</em>
-                    </p>
-                    <p class="fragment">Goal is to go live this month</p>
-                    <p class='fragment'><a href='https://github.com/AppSharing' target='_blank'>https://github.com/AppSharing</a></p>
+                    
                 </section>
 
 				<section>
