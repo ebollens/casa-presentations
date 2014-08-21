@@ -39,10 +39,22 @@
             <div class="slides">
 
                 <section>
-                    <h1>CASA</h1>
                     <h4><em>The Community App Sharing Architecture</em></h4>
+                    <h1>CASA Workshop</h1>
                     <p>
-                        <small><a href="http://eb.io" target="_blank">Eric Bollens</a> / <a href="https://github.com/ebollens" target="_blank">ebollens [GitHub]</a> / <a href="http://twitter.com/ericbollens" target="_blank">@ericbollens [Twitter]</a></small>
+                        <small><a href="http://eb.io" target="_blank">Eric Bollens</a> / <a href="mailto:ebollens@ucla.edu">ebollens@ucla.edu</a> / <a href="https://github.com/ebollens" target="_blank">ebollens [GitHub]</a> / <a href="http://twitter.com/ericbollens" target="_blank">@ericbollens [Twitter]</a></small>
+                    </p>
+                </section>
+                
+                <section>
+                    <h2>Before we get started...</h2>
+                    <p class='fragment'>
+                        <strong>Presentation Slides</strong>
+                        <br><a href='http://ebollens.github.io/casa-presentations/ims-workshop' target='_blank'>ebollens.github.io/casa-presentations/ims-workshop</a>
+                    </p>
+                    <p class='fragment'>
+                        <strong>Sample Code</strong>
+                        <br><a href='https://github.com/ebollens/casa-on-rails' target='_blank'>github.com/ebollens/casa-on-rails</a>
                     </p>
                 </section>
                 
@@ -296,8 +308,8 @@
                     <section>
                         <h2>CASA on Rails (CASA &quot;Lite&quot;)</h2>
                         <p class="fragment"><em><strong>Under development</strong></em></p>
-                        <p class="fragment"><em>Focus on ease of installation and use<br><span class="fragment">Reducted feature set from the entire protocol</span></em></p>
-                        <p class="fragment"><a href="http://github.com/ebollens/casa-on-rails" target="_blank">github.com/ebollens/casa-on-rails</a><br><small>(temporarily)</small></p>
+                        <p class="fragment"><em>Opinionated, simplified and easy to use<br><span class="fragment">Reducted feature set from the entire protocol</span></em></p>
+                        <p class="fragment"><a href="http://github.com/ebollens/casa-on-rails" target="_blank">github.com/ebollens/casa-on-rails</a></p>
                     </section>
                     
                     <section>
@@ -309,67 +321,52 @@
                     </section>
                     
                 </section>
-                
+                    
                 <section>
-                    
-                    <section>
-                        <h2>Demo</h2>
-                        <h3>Publisher: JSON Response</h3>
-                        <p class='fragment'>As simple as a static JSON file</p>
-                    </section>
-                    
+                    <h2>Demo</h2>
+                    <h3>Publisher: JSON Response</h3>
+                    <p class='fragment'>As simple as a static JSON file</p>
                 </section>
-                
+
                 <section>
-                    
-                    <section>
-                        <h2>Demo</h2>
-                        <h3>Publisher: App Store Bolt-on</h3>
-                        <p class='fragment'>Adapter from your schema to CASA's schema</p>
-                    </section>
-                    
+                    <h2>Demo</h2>
+                    <h3>Publisher: App Store Bolt-on</h3>
+                    <p class='fragment'>Adapter from your schema to CASA's schema</p>
                 </section>
-                
+
                 <section>
-                    
-                    <section>
-                        <h2>Demo</h2>
-                        <h3>Receiver &amp; Relay: Discovery and Propagation</h3>
-                        <p class='fragment'>Translating attributes</p>
-                        <p class='fragment'>Squashing the journal</p>
-                        <p class='fragment'>Relaying recieved apps to peers</p>
-                    </section>
-                    
+                    <h2>Demo</h2>
+                    <h3>Receiver &amp; Relay: Discovery and Propagation</h3>
+                    <p class='fragment'>Translating attributes</p>
+                    <p class='fragment'>Squashing the journal</p>
+                    <p class='fragment'>Relaying recieved apps to peers</p>
                 </section>
-                
+
                 <section>
-                    
-                    <section>
-                        <h2>Demo</h2>
-                        <h3>Local: Exposing Apps to Outlets</h3>
-                    </section>
-                    
+                    <h2>Demo</h2>
+                    <h3>Local: Exposing Apps to Outlets</h3>
                 </section>
-                    
+
                 <section>
-                    
-                    <section>
-                        <h2>Other Considerations</h2>
-                        <p class='fragment'>Filter payloads with unknown/failing requirements</p>
-                        <p class='fragment'>Transform payloads based on institutional context</p>
-                        <p class='fragment'>Defining attributes (UUID, name, interpretation and journaling)</p>
-                        <p class='fragment'>UI-based configuration is hard</p>
-                        <p class='fragment'>Supporting search strings and query languages</p>
-                        <p class='fragment'>Data paths and structures</p>
-                    </section>
-                    
+                    <h2>Other Considerations</h2>
+                    <p class='fragment'>Filter payloads with custom rules</p>
+                    <p class='fragment'>Transform payloads based on institutional context</p>
+                    <p class='fragment'>UI-based configuration is hard</p>
+                    <p class='fragment'>Attribute definitions (UUID, name, interpretation and journaling)</p>
+                    <p class='fragment'>Supporting search strings and query languages</p>
+                    <p class='fragment'>Data paths and structures</p>
                 </section>
                 
                 <section>
                     
                     <section>
                         <h2>In the Wild</h2>
-                        <p class='fragment'><img src='../_asset/img/inthewild-eduappcenter.png'></p>
+                        <p class='fragment'><strong>UCLA and UC system</strong> conducting a pilot</p>
+                        <p class='fragment'><strong>IMS instance</strong> coming soon</p>
+                        <p class='fragment'>
+                            <strong>EduAppCenter</strong> providing a CASA endpoint<br>
+                            <img src='../_asset/img/inthewild-eduappcenter.png' style='height:350px'>
+                        </p>
                     </section>
                     
                 </section>
@@ -380,7 +377,7 @@
                         <h2>Thank You</h2>
                         <h3>Any Questions?</h3>
                         <p>
-                            <small><a href="http://eb.io" target="_blank">Eric Bollens</a> / <a href="https://github.com/ebollens" target="_blank">ebollens [GitHub]</a> / <a href="http://twitter.com/ericbollens" target="_blank">@ericbollens [Twitter]</a></small>
+                            <small><a href="http://eb.io" target="_blank">Eric Bollens</a> / <a href="mailto:ebollens@ucla.edu">ebollens@ucla.edu</a> / <a href="https://github.com/ebollens" target="_blank">ebollens [GitHub]</a> / <a href="http://twitter.com/ericbollens" target="_blank">@ericbollens [Twitter]</a></small>
                         </p>
                     </section>
                     
